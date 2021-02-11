@@ -2,7 +2,10 @@
 title: "Lab 01 - Hello R"
 author: "Bassam Hamdy "
 date: "4/2/2021"
-output: html_document
+output: 
+  html_document: 
+    fig_width: 11
+    fig_height: 7
 ---
 
 University ID: 236413465
@@ -12,9 +15,16 @@ University ID: 236413465
 ```{r load-packages, message=FALSE}
 library(tidyverse) 
 library(datasauRus)
+
+```
+### Lab Exercise
+```{r}
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
 
-### Lab Exercise
 
-(Type your answeيr to the Exercise here. Remember to include the code, you need to put the code between three backticks followed by the following line on top of the code {r load-packages, message=FALSE}. See 'Load Packages' above as an example. Delete everything in these brackets after typing your answer.)
+
